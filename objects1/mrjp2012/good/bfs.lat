@@ -29,7 +29,7 @@ class Node{
     void init(int val){
         visited = false;
         value = val;
-        neighbours = (List)null;    
+        neighbours = (cast List)null;    
     }
 
     boolean isVisited(){
@@ -49,7 +49,7 @@ class Node{
     }
 
     void addNeighbour(Node n){
-        if (neighbours == (List)null){
+        if (neighbours == (cast List)null){
             neighbours = new List;
             neighbours.makeSingleton(n);
         }
@@ -67,7 +67,7 @@ class List{
 
     void makeSingleton(Node node){
         head = node;
-        tail = (List)null;
+        tail = (cast List)null;
     }
 
     Node getHead(){
@@ -89,14 +89,14 @@ class Queue{
     List last;
 
     Node get(){
-        if (first == (List)null)
-            return (Node)null;
+        if (first == (cast List)null)
+            return (cast Node)null;
 
         Node retEl = first.head;
 
         first = first.tail;
-        if (first == (List)null)
-            last = (List)null;
+        if (first == (cast List)null)
+            last = (cast List)null;
 
         return retEl;
     }
@@ -104,7 +104,7 @@ class Queue{
     void put(Node n){
         List newTail = new List;
         newTail.makeSingleton(n);
-        if (first == (List)null){
+        if (first == (cast List)null){
             first = newTail;
             last = newTail;
         }
@@ -115,7 +115,7 @@ class Queue{
     }
 
     boolean isEmpty(){
-        return (first == (List)null);
+        return (first == (cast List)null);
     }
 }
 
@@ -175,7 +175,7 @@ void bfs(Queue q){
         Node el = q.get();
         printInt(el.getValue());
         List neigh = el.getNeighbours();
-        while(neigh != (List)null){
+        while(neigh != (cast List)null){
             Node n = neigh.getHead();
             if (!n.isVisited()){
                 n.markAsVisited();
