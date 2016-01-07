@@ -1,0 +1,19 @@
+// autor: wosiu
+
+class A{
+	int[] createArray() {
+		int[] a = new int[3];
+		a[0] = 0;
+		a[1] = 1;
+		a[2] = 2;
+		return a;
+	}
+}
+
+int main() {
+	A a = new A;
+	printInt( a.createArray()[1] );
+	printInt( new A.createArray()[2] );
+	printInt( (new A).createArray()[2] );	
+	return 0;
+}

@@ -1,0 +1,11 @@
+// autor: wosiu
+
+int[] createArray() {
+	return new int[3];
+}
+
+
+int main() {
+	createArray()[2];
+	return 0;
+}
